@@ -1,0 +1,65 @@
+<!--
+ * @Author: Lee
+ * @Date: 2021-09-27 15:07:26
+ * @LastEditors: Lee
+ * @LastEditTime: 2021-09-28 10:47:37
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>始生万物/七牛云图片上传工具</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <!-- logo -->
+    <img class="logo" src="./images/logo.jpg" />
+    <!-- 选择项目 -->
+    <div class="radio-group">
+      <div>选择项目：</div>
+      <div class="radio-item" data-dir="/a">项目A</div>
+      <div class="radio-item" data-dir="/b">项目B</div>
+      <div class="radio-item" data-dir="/c">项目C</div>
+      <div class="radio-item" data-dir="/d">项目D</div>
+    </div>
+    <!-- 文件上传 -->
+    <div class="file-wrap">
+      <input type="file" />
+      <span class="file-tips">选择文件</span>
+      <div class="file-mask"></div>
+    </div>
+    <!-- 上传状态 -->
+    <div class="upload-status"></div>
+    <!-- 上传结果 -->
+    <div class="upload-res">
+      <div class="upload-link"></div>
+      <div class="upload-tips">（点击上方链接复制）</div>
+      <img class="upload-img" />
+    </div>
+    <!-- 版权声明 -->
+    <div class="copy-right">
+      <div>Copyright&copy;2021 版权归 Li-HONGYAO 所有</div>
+      <div>
+        <a href="https://github.com/lihongyao">GitHub</a>
+        <span>/</span>
+        <a href="https://www.npmjs.com/~lihongyao">npm</a>
+        <span>/</span>
+        <a href="https://blog.csdn.net/Hierarch_Lee?spm=1000.2115.3001.5343"
+          >CSDN</a
+        >
+      </div>
+      <div style="font-size: 12px; margin-top: 8px">lihy_online@163.com</div>
+    </div>
+    <!-- 图片预览 -->
+    <div class="prevview">
+      <img class="prevview-img" src="" />
+      <img class="icon-close" src="./images/icon_close.png" />
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
