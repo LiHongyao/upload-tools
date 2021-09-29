@@ -148,7 +148,7 @@ body {
 }
 
 /* 图片预览 */
-.prevview {
+.preview {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -160,13 +160,13 @@ body {
   align-items: center;
   display: none;
 }
-.prevview.show {
+.preview.show {
   display: flex;
 }
-.prevview .prevview-img {
+.preview .preview-img {
   max-width: 600px;
 }
-.prevview .icon-close {
+.preview .icon-close {
   width: 20px;
   cursor: pointer;
   position: absolute;

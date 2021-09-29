@@ -34,7 +34,7 @@ $(function () {
         $(".upload-img").attr("src", imgLink);
         $(".upload-res").addClass("show");
         $(".upload-status").html('<span class="success">上传成功</span>');
-        $(".prevview .prevview-img").attr("src", imgLink);
+        $(".preview .preview-img").attr("src", imgLink);
       })
       .catch(function () {
         $(".upload-status").html(
@@ -55,10 +55,10 @@ $(function () {
   });
   // 7. 预览图片
   $(".upload-img").click(function () {
-    $(".prevview").addClass("show");
+    $(".preview").addClass("show");
   });
   // 8. 关闭预览
   $(".icon-close").click(function () {
-    $(".prevview").removeClass("show");
+    $(".preview").removeClass("show");
   });
 });
