@@ -2,11 +2,11 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:03
  * @LastEditors: Lee
- * @LastEditTime: 2021-09-28 10:43:04
+ * @LastEditTime: 2021-09-29 09:11:41
  */
 $(function () {
   // 1. 登录
-  // login();
+  login();
   // 2. 变量
   var dirName = "";
   var link = "";

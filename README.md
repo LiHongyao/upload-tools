@@ -2,11 +2,11 @@
  * @Author: Lee
  * @Date: 2021-09-28 10:51:01
  * @LastEditors: Lee
- * @LastEditTime: 2021-09-28 11:06:41
+ * @LastEditTime: 2021-09-29 09:31:44
 -->
 # Li-HONGYAO'S Upload-Tools
 
- ![](https://qn.d-dou.com/dcep/dbean/71b5ff36218d498884e1facfe126b24cjsq3a7.png)
+ ![](https://qn.d-dou.com/dcep/dbean/3f48e7f9aeb8470992de109c9c69c57ejredas.gif)
 
 ## 1. 概述
 在实际开发过程中，对于一些体积比较大的图片，我们一般选择上传至CDN/服务器通过链接访问，而不会放在本地（这样会增加项目体积，影响加载速度）。

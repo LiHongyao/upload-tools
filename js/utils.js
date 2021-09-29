@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:13
  * @LastEditors: Lee
- * @LastEditTime: 2021-09-28 10:50:08
+ * @LastEditTime: 2021-09-29 09:35:25
  */
 
 /**
@@ -28,12 +28,13 @@ function clipboard(value) {
 
 /**
  * 登录授权
+ * 如果需要考虑安全问题，自行替换自己的登录接口
  */
 function login() {
   fetch("http://backapi.ddou.cn/api/login/in", {
     method: "POST",
     body: JSON.stringify({
-      userName: "同名",
+      userName: "",
       password: "!@#sajdn123",
     }),
     headers: {
@@ -96,6 +97,7 @@ function getFilePath(file, dir) {
 
 /**
  * 执行上传
+ * 获取七牛云上传拼接由后端配合生成
  * @param {*} file
  * @param {*} dir
  * @returns
