@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:07:26
  * @LastEditors: Lee
- * @LastEditTime: 2021-09-28 10:47:37
+ * @LastEditTime: 2022-03-03 09:38:58
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -14,8 +14,11 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <!-- logo -->
-    <img class="logo" src="./images/logo.jpg" />
+    <!-- 头部 -->
+    <header>
+      <img class="logo" src="./images/logo.jpg" />
+      <div class="welcome">欢迎使用 Upload-file 工具~</div>
+    </header>
     <!-- 选择项目 -->
     <div class="radio-group">
       <div>选择项目：</div>
@@ -24,20 +27,24 @@
       <div class="radio-item" data-dir="/c">项目C</div>
       <div class="radio-item" data-dir="/d">项目D</div>
     </div>
+
     <!-- 文件上传 -->
     <div class="file-wrap">
       <input type="file" />
       <span class="file-tips">选择文件</span>
       <div class="file-mask"></div>
     </div>
+
     <!-- 上传状态 -->
     <div class="upload-status"></div>
+
     <!-- 上传结果 -->
     <div class="upload-res">
       <div class="upload-link"></div>
       <div class="upload-tips">（点击上方链接复制）</div>
       <img class="upload-img" />
     </div>
+
     <!-- 版权声明 -->
     <div class="copy-right">
       <div>Copyright&copy;2021 版权归 Li-HONGYAO 所有</div>
@@ -52,6 +59,7 @@
       </div>
       <div style="font-size: 12px; margin-top: 8px">lihy_online@163.com</div>
     </div>
+
     <!-- 图片预览 -->
     <div class="preview">
       <img class="preview-img" src="" />
@@ -59,6 +67,7 @@
     </div>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/constants.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/index.js"></script>
   </body>

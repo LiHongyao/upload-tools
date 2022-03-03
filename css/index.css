@@ -14,12 +14,21 @@ body {
   align-items: center;
   text-align: center;
 }
-
-.logo {
-  height: 80px;
-  border-radius: 12px;
+header {
   margin-bottom: 50px;
 }
+header .logo {
+  height: 80px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+header .welcome {
+  font-size: 14px;
+  color: #999999;
+  letter-spacing: 1px;
+}
+
 /* 项目 */
 .radio-group {
   display: flex;
@@ -32,11 +41,11 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  opacity: 0.75;
+  color: #999999;
   transition: all 0.15s linear;
 }
 .radio-item::before {
-  content: "";
+  content: '';
   width: 10px;
   height: 10px;
   margin-right: 6px;
@@ -45,10 +54,9 @@ body {
   border: 2px solid #eee;
 }
 .radio-item:hover {
-  opacity: 1;
+  color: #4169e1;
 }
 .radio-item.checked {
-  opacity: 1;
   color: #4169e1;
 }
 .radio-item.checked::before {
@@ -79,7 +87,7 @@ body {
   position: absolute;
   cursor: pointer;
 }
-[type="file"] {
+[type='file'] {
   width: 100%;
   position: absolute;
   height: 100%;
