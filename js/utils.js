@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:13
  * @LastEditors: Lee
- * @LastEditTime: 2022-03-03 10:09:25
+ * @LastEditTime: 2022-03-04 10:11:21
  */
 
 /**
@@ -165,5 +165,6 @@ function uploadForQiniu(file, dir) {
  * @returns
  */
 function uploadForOSS() {
-
+  // -- 获取配置信息
+  fetch();
 }
