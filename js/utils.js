@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:13
  * @LastEditors: Lee
- * @LastEditTime: 2022-03-04 10:11:21
+ * @LastEditTime: 2022-07-27 14:19:28
  */
 
 /**
@@ -10,11 +10,11 @@
  * 如果需要考虑安全问题，自行替换自己的登录接口
  */
 function login() {
-  fetch('http://backapi.ddou.cn/api/login/in', {
+  fetch('后端登录接口地址', {
     method: 'POST',
     body: JSON.stringify({
       userName: '',
-      password: '!@#sajdn123',
+      password: '',
     }),
     headers: { 'Content-Type': 'application/json' },
   }).then(function (response) {
@@ -164,7 +164,50 @@ function uploadForQiniu(file, dir) {
  * @param {*} dir
  * @returns
  */
-function uploadForOSS() {
-  // -- 获取配置信息
-  fetch();
+function uploadForOSS(file, dir) {
+  return new Promise(function (resolve, reject) {
+    var filePath = getFilePath(file, dir);
+    if (filePath.startsWith('/')) {
+      filePath = filePath.replace('/', '');
+    }
+
+    //  -- 获取OSS配置信息
+    fetch('OSS配置服务器接口', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('UPLOAD_TOKEN') || '',
+      },
+    })
+      .then(function (_) {
+        return _.clone().json();
+      })
+      .then(function (configResp) {
+        if (configResp && configResp.code === 0) {
+          var formData = new FormData();
+          //  -- 参数顺序不能乱
+          formData.append('key', filePath);
+          formData.append('OSSAccessKeyId', configResp.data.accessKeyId);
+          formData.append('policy', configResp.data.policy);
+          formData.append('Signature', configResp.data.signature);
+          formData.append('file', file);
+          //  -- 执行上传
+          fetch(configResp.data.host, {
+            method: 'POST',
+            body: formData,
+          })
+            .then(function (uploadResp) {
+              if ([200, 204].indexOf(uploadResp.status) != -1) {
+                resolve(uploadResp.url + filePath);
+              }
+            })
+            .catch(function () {
+              reject();
+            });
+        }
+      })
+      .catch(function () {
+        reject();
+      });
+  });
 }
