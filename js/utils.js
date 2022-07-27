@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:13
  * @LastEditors: Lee
- * @LastEditTime: 2022-07-27 14:19:28
+ * @LastEditTime: 2022-07-27 14:32:31
  */
 
 /**
@@ -10,12 +10,9 @@
  * 如果需要考虑安全问题，自行替换自己的登录接口
  */
 function login() {
-  fetch('后端登录接口地址', {
+  fetch(APP_LOGIN_API_HOST, {
     method: 'POST',
-    body: JSON.stringify({
-      userName: '',
-      password: '',
-    }),
+    body: JSON.stringify(APP_LOGIN_PARAMS),
     headers: { 'Content-Type': 'application/json' },
   }).then(function (response) {
     response
@@ -113,7 +110,7 @@ function uploadForQiniu(file, dir) {
   return new Promise(function (resolve, reject) {
     var filePath = getFilePath(file, dir);
     // -- 获取后端生成的上传七牛云需要的 key & token
-    fetch('http://backapi.ddou.cn/api/config/acquireUploadToken/v2', {
+    fetch(APP_QINIU_CONFIGS_API_HOST, {
       method: 'POST',
       body: JSON.stringify({ filename: filePath }),
       headers: {
@@ -172,7 +169,7 @@ function uploadForOSS(file, dir) {
     }
 
     //  -- 获取OSS配置信息
-    fetch('OSS配置服务器接口', {
+    fetch(APP_OSS_CONFIGS_API_HOST, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

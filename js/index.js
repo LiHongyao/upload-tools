@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:03
  * @LastEditors: Lee
- * @LastEditTime: 2022-03-04 10:07:25
+ * @LastEditTime: 2022-07-27 14:34:18
  */
 $(function () {
   // -- 执行登录
@@ -17,7 +17,7 @@ $(function () {
   $('.radio-item').click(function () {
     dirName = $(this).data('dir');
     $('.upload-status').empty();
-    $('.file-tips').text("选择文件")
+    $('.file-tips').text('选择文件');
     $('.upload-res').removeClass('show');
     $('.file-mask').remove();
     $(this).addClass('checked').siblings().removeClass('checked');
