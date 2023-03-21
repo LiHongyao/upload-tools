@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 html,
 body {
   height: 100%;
@@ -13,9 +15,10 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 header {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 header .logo {
   height: 80px;
@@ -30,9 +33,16 @@ header .welcome {
 }
 
 /* 项目 */
+.projects {
+  margin-bottom: 20px;
+}
+.projects .title {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #555555;
+}
 .radio-group {
   display: flex;
-  color: #444444;
   letter-spacing: 1px;
 }
 .radio-item {
@@ -69,7 +79,6 @@ header .welcome {
   padding: 0 12px;
   height: 35px;
   background: #eee;
-  margin-top: 20px;
   border-radius: 20px;
   display: flex;
   justify-content: center;

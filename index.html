@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:07:26
  * @LastEditors: Lee
- * @LastEditTime: 2022-03-04 10:07:18
+ * @LastEditTime: 2023-03-21 14:16:59
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>始生万物/七牛云图片上传工具</title>
+    <title>Uploads</title>
     <link rel="stylesheet" href="./css/index.css" />
     <script src="https://cdn.bootcdn.net/ajax/libs/ali-oss/6.17.1/aliyun-oss-sdk.min.js"></script>
   </head>
@@ -21,12 +21,14 @@
       <div class="welcome">欢迎使用 Upload-file 工具~</div>
     </header>
     <!-- 选择项目 -->
-    <div class="radio-group">
-      <div>选择项目：</div>
-      <div class="radio-item" data-dir="/a">项目A</div>
-      <div class="radio-item" data-dir="/b">项目B</div>
-      <div class="radio-item" data-dir="/c">项目C</div>
-      <div class="radio-item" data-dir="/d">项目D</div>
+    <div class="projects">
+      <div class="title">选择项目</div>
+      <div class="radio-group">
+        <div class="radio-item" data-dir="/a">项目A</div>
+        <div class="radio-item" data-dir="/b">项目B</div>
+        <div class="radio-item" data-dir="/c">项目C</div>
+        <div class="radio-item" data-dir="/d">项目D</div>
+      </div>
     </div>
 
     <!-- 文件上传 -->
@@ -48,15 +50,13 @@
 
     <!-- 版权声明 -->
     <div class="copy-right">
-      <div>Copyright&copy;2021 版权归 Li-HONGYAO 所有</div>
+      <div>Copyright&copy;2023 版权归「李鸿耀」所有</div>
       <div>
         <a href="https://github.com/lihongyao">GitHub</a>
         <span>/</span>
         <a href="https://www.npmjs.com/~lihongyao">npm</a>
         <span>/</span>
-        <a href="https://blog.csdn.net/Hierarch_Lee?spm=1000.2115.3001.5343"
-          >CSDN</a
-        >
+        <a href="https://blog.csdn.net/Hierarch_Lee">CSDN</a>
       </div>
       <div style="font-size: 12px; margin-top: 8px">lihy_online@163.com</div>
     </div>

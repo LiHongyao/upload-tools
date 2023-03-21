@@ -2,18 +2,21 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:03
  * @LastEditors: Lee
- * @LastEditTime: 2022-07-27 14:34:18
+ * @LastEditTime: 2023-03-21 14:42:39
  */
 $(function () {
   // -- 执行登录
-  login();
+  // login();
+
   // -- 定义变量，记录数据
-  var dirName = '', link = '';
+  var dirName = '',
+    link = '';
   // -- 选择项目
   if ($('.radio-item').length === 0) {
     dirName = APP_DEFAULT_DIRNAME;
     $('.file-mask').remove();
   }
+  
   $('.radio-item').click(function () {
     dirName = $(this).data('dir');
     $('.upload-status').empty();

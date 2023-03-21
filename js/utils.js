@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-09-27 15:43:13
  * @LastEditors: Lee
- * @LastEditTime: 2022-07-27 14:32:31
+ * @LastEditTime: 2023-03-21 14:41:31
  */
 
 /**
@@ -97,11 +97,47 @@ function getFilePath(file, dir) {
  * @returns
  */
 function upload(file, dir) {
-  return uploadForQiniu(file, dir);
+  return uploadForServer(file, dir);
 }
 
 /**
- * 上传至七牛云
+ * 服务器上传
+ * @param {*} file
+ * @returns
+ */
+function uploadForServer(file) {
+  return new Promise((resolve, reject) => {
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('category', 'test');
+    fetch(APP_SERVER_CONFIGS_API_HOST, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(function (response) {
+        response
+          .clone()
+          .json()
+          .then((resp) => {
+            if (resp.status === 200) {
+              resolve(resp.data);
+            } else {
+              reject();
+            }
+          })
+          .catch(function () {
+            reject();
+          });
+      })
+      .catch(function () {
+        reject();
+      });
+  });
+}
+
+/**
+ * 前端直传：七牛云
  * @param {*} file
  * @param {*} dir
  * @returns
@@ -155,8 +191,9 @@ function uploadForQiniu(file, dir) {
       });
   });
 }
+
 /**
- * 上传至OSS
+ * 前端直传：OSS
  * @param {*} file
  * @param {*} dir
  * @returns
